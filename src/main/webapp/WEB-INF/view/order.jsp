@@ -123,7 +123,7 @@
     }
 	
     //fungsi load data order
-    
+    var tabelOrder;
     function loadDataOrder() {
       $.ajax({
         type: 'get',
@@ -150,12 +150,12 @@
     // document.ready
 
     $(document).ready(function () {
-      loadDataOrder();;
+      loadDataOrder();
+      tabelOrder = $('#tabelOrder').DataTable();
       $('#tglTransaksi').datepicker({
         autoclose: true,
-        format: 'yyyy-mm-dd'
+        format: 'yyyy-MM-dd'
       });
-      tabelOrder = $('#tabelOrder').DataTable();
       loadData();
     });
 
