@@ -13,7 +13,7 @@
 	name="viewport">
 <!-- Bootstrap 3.3.7 -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css">
-<!-- Font Awesome -->
+<!-- Font Awesome 123 -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <!-- Ionicons -->
