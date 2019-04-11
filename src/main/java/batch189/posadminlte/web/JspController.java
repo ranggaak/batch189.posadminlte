@@ -18,5 +18,9 @@ public class JspController {
 		return "order";
 	}
 
+//	@RequestMapping("index")
+//	public String index(){
+//		return "index";
+//	}
 	
 }

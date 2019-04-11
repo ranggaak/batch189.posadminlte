@@ -36,9 +36,9 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
 
-<!-- Date Picker
+<!-- Date Picker -->
 <script src="${pageContext.request.contextPath}/assets/plugins/datepicker/bootstrap-datepicker.js"></script>
- --><!-- Google Font -->
+<!-- Google Font -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 <!-- DataTables -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/dataTables.bootstrap.min.css">
@@ -67,9 +67,9 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/plugins/daterangepicker/daterangepicker.js"></script>
 	-->
-	<!-- datepicker -->
+	<!-- datepicker 
 	<script src="${pageContext.request.contextPath}/assets/js/bootstrap-datepicker.min.js"></script>
-	
+	-->
 	<!-- Validasi -->
 	<script src="${pageContext.request.contextPath}/assets/validasi/jquery.validate.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/validasi/jquery.validate.min.js"></script>
@@ -90,6 +90,8 @@
 	<script src="${pageContext.request.contextPath}/assets/js/jquery.dataTables.min.js"></script>
  	<script src="${pageContext.request.contextPath}/assets/js/dataTables.bootstrap.min.js"></script>
     
+    <!-- iCheck -->
+<script src="${pageContext.request.contextPath}/assets/plugins/iCheck/icheck.min.js"></script>
     <decorator:head></decorator:head>
 </head>
 <body class="hold-transition skin-black sidebar-mini">
@@ -128,8 +130,6 @@
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">MENU</li>
-          <li><a href="barang"><i class="fa fa-tags"></i> <span>Data Barang</span></a></li>
-          <li><a href="order"><i class="fa fa-shopping-cart"></i> <span>Order</span></a></li>
         </ul>
         <!-- /.sidebar-menu -->
       </section>

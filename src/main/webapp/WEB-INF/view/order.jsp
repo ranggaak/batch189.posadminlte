@@ -4,21 +4,16 @@
 <head>
   <title>POS | Order</title>
 <script>
-
     // membuat detailOrder yg akan disubmit 
-
     var orderDetails = [];
-
     function tambahOrderDetail() {
       var orderDetailBaru = true;
-
       $.each(orderDetails, function (index, element) {
         if (element.id.kodeBarang == $('#barang').val()) {
           element.jumlahBarang = Number(element.jumlahBarang) + Number($('#jumlahBarang').val());
           orderDetailBaru = false;
         }
       });
-
       if (orderDetailBaru) {
         var orderDetail = {};
         orderDetail.id = {};
@@ -28,28 +23,21 @@
         orderDetail.hargaSatuan = $('#barang > option:selected').data('harga');
         orderDetail.h_namaBarang = $('#barang > option:selected').data('nama');
         // tanpa subtotal
-
         orderDetails.push(orderDetail);
       }
-
       refreshDaftarBarang();
     }
-
     // input detailOrder ke object order & kirim data order
-
     var order = {};
-
     function simpanOrder() {
       $.each(orderDetails, function (index, element) {
         element.id.kodeOrder = $('#kode').val();
       });
-
       order.kode = $('#kode').val();
       order.namaPelanggan = $('#namaPelanggan').val();
       order.tglTransaksi = $('#tglTransaksi').val();
       order.orderDetails = orderDetails;
       // tanpa grandtotal
-
       $.ajax({
         type: 'POST',
         url: 'order/',
@@ -67,14 +55,11 @@
         }
       });
     }
-
     // refresh daftar barang & nilai grand total
-
     function refreshDaftarBarang() {
       var subTotal = 0;
       var grandTotal = 0;
       var s = '<tr>';
-
       $.each(orderDetails, function (index, element) {
         subTotal = element.hargaSatuan * element.jumlahBarang;
         s += '<td>' + element.id.kodeBarang + '</td>';
@@ -85,16 +70,12 @@
         s += '</tr>';
         grandTotal += subTotal;
       });
-
       $('#tabelOrderDetail').html(s);
       $('#grandTotal').val(grandTotal);
       $('#jumlahBarang').val('1');
     }
-
     // fungsi utk load & tampilkan data dropdown
-
     var dataBarang = [];
-
     function loadData() {
       $.ajax({
         type: 'GET',
@@ -107,7 +88,6 @@
         }
       });
     }
-
     function tampilkanData(d) {
       var s = '';
       $(d).each(function (index, element) {
@@ -123,7 +103,7 @@
     }
 	
     //fungsi load data order
-    
+    var tabelOrder;
     function loadDataOrder() {
       $.ajax({
         type: 'get',
@@ -148,17 +128,15 @@
       })
     }
     // document.ready
-
     $(document).ready(function () {
-      loadDataOrder();;
+      loadDataOrder();
+      tabelOrder = $('#tabelOrder').DataTable();
       $('#tglTransaksi').datepicker({
         autoclose: true,
         format: 'yyyy-mm-dd'
       });
-      tabelOrder = $('#tabelOrder').DataTable();
       loadData();
     });
-
   </script>  
 </head>
 

@@ -39,6 +39,15 @@
 		<dispatcher>INCLUDE</dispatcher>
 		<dispatcher>ERROR</dispatcher>
 	</filter-mapping>
+	
+	<filter>
+		<filter-name>filterku</filter-name>
+		<filter-class>batch189.posadminlte.web.SecurityFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>filterku</filter-name>
+		<url-pattern>/secure/*</url-pattern>
+	</filter-mapping>
 
 
 
